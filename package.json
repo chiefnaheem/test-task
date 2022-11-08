@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "CI= node ./bin/www",
-    "start:dev": "node ./bin/www",
-    "dev": "yarn && yarn prettier:fix && yarn build && node ./bin/www",
+    "test": "jest",
+    "dev": "concurrently \"tsc -w\" \"nodemon ./src/server.ts\"",
+    "start": "node dist/server.js",
     "compile": "yarn tsc",
     "build": "tsc",
     "clean": "rm -rf dist && mkdir dist",
