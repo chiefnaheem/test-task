@@ -5,8 +5,7 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import cors from 'cors'
 import dotenv from 'dotenv';
-import bookRouter from './routes/books';
-import searchRouter from './routes/search'
+import indexRouter from './routes';
 
 const app = express();
 
@@ -24,8 +23,7 @@ app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'jade');
 
 //Routes
-app.use('/api/v1', bookRouter)
-app.use('/api', searchRouter)
+app.use('/', indexRouter);
 app.use("/testing", (req: Request, res: Response, next: NextFunction) => {
   res.send('Hi there')
 });
