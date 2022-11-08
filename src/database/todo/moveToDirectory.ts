@@ -26,7 +26,7 @@ export default async function moveTodoToDirectory ({
             "#directoryId": "directoryId",
         },
         ExpressionAttributeValues: {
-            ":directoryId": directory
+            ":directoryId": directoryId
         },
     };
     return client.update(params).promise();
