@@ -3,7 +3,7 @@ import { DocumentClient } from "aws-sdk/lib/dynamodb/document_client";
 
 import AWS from 'aws-sdk';
 
-export default async function moveToDirectory ({
+export default async function moveTodoToDirectory ({
     id,
     directoryId,
     }: {
@@ -28,5 +28,6 @@ export default async function moveToDirectory ({
         ExpressionAttributeValues: {
             ":directoryId": directory
         },
+    };
+    return client.update(params).promise();
     }
-    

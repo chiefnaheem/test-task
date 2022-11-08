@@ -3,14 +3,14 @@ import { DocumentClient } from "aws-sdk/lib/dynamodb/document_client";
 
 import AWS from 'aws-sdk';
 
-export default async function listDirectories ({
+export default async function listTodos ({
     }: {
     }): Promise<PutItemOutput> {
     const client: DocumentClient = new AWS.DynamoDB.DocumentClient({
         endpoint: new AWS.Endpoint("http://localhost:8000"),
         region: "local",
     });
-    const TableName = "directory";
+    const TableName = "todo";
     
     const params = {
         TableName,

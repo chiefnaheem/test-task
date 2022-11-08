@@ -19,11 +19,13 @@ export default async function markTodoAsDone ({
         Key: {
             id,
         },
-        UpdateExpression: "set done = :done",
+        UpdateExpression: "set #done = :done",
+        ExpressionAttributeNames: {
+            "#done": "done",
+        },
         ExpressionAttributeValues: {
             ":done": true,
         },
-        ReturnValues: "UPDATED_NEW",
     };
     
     return client.update(params).promise();

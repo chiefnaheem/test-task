@@ -16,11 +16,7 @@
     "eslint": "eslint 'src/**/*.ts'",
     "eslint:fix": "eslint --fix 'src/**/*.ts'",
     "prettier": "prettier 'src/**/*.ts'",
-    "prettier:fix": "prettier --write 'src/**/*.ts'",
-    "create-db": "cd dynamodb && node createCarsTable.js && cd ..",
-    "delete-db": "cd dynamodb && node deleteCarsTable.js && cd ..",
-    "load-data": "cd dynamodb && node loadCarData.js && cd ..",
-    "read-data": "cd dynamodb && node readDataTest.js && cd .."
+    "prettier:fix": "prettier --write 'src/**/*.ts'"
   },
   "dependencies": {
     "@types/node": "^15.14.9",
