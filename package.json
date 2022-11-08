@@ -9,7 +9,6 @@
     "compile": "yarn tsc",
     "build": "tsc",
     "clean": "rm -rf dist && mkdir dist",
-    "test": "jest --runInBand",
     "heroku-postbuild": "yarn clean && yarn compile",
     "preci": "rm -rf node_modules",
     "ci": "yarn install --frozen-lockfile",
